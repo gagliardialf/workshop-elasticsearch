@@ -52,43 +52,80 @@
 				</section>
 				<section>
 					<h2>Big Data</h2>
-					<h3>
-						<ul>
-							<li><strong>Volume</strong> (big!)</li>
-							<br/>
-							<li><strong>Velocità</strong> di generazione / analisi in tempo reale</li>
-							<br/>
-							<li><strong>Varietà</strong> (dati strutturati e non)</li>
-							<br/>
-							<p>inconsistenza / complessità</p>
-						</ul>
-					</h3>
-				</section>
-				<section>
-					<p>Non serve avere i Big Data se non hai gli strumenti per manipolarli</p>
-					<p><strong>‘Players’ in the search market</strong></p>
-					<ul>
-						<li><strong>Web Search engines:</strong> Google;Bing;Yahoo!;Ask.com;Baidu</li>
-						<br/>
-						<li><strong>Open-Source:</strong> Sphinx;Apache Lucene;Elasticsearch;Solr;Sensei</li>
-						<br/>
-						<li><strong>Enterprise Search:</strong> Oracle Endeca;MDEX;HP Autonomy;Exalead;IBM Enterprise Search</li>
-					</ul>
-				</section>
-				<section>
-				<h2>Search categories</h2>
 					<p>
 						<ul>
-							<li>Basic/Metadata retrieval <strong>→ data stores</strong></li>
+							<li><strong>Volume:</strong> big!</li>
 							<br/>
-							<li>Full-text search ; Geolocation ; Fuzzy search (“did-you-mean”) ; Natural Language <strong>→ search engines</strong></li>
+							<li><strong>Velocity:</strong> speed of generation / processing</li>
 							<br/>
+							<li><strong>Variety and variability:</strong> structured and unstructured data from different sources</li>
 							
 						</ul>
 					</p>
 				</section>
 				<section>
-				<h2>A search engine</h2>					
+					<img width="480" height="700" src="img/my_name.jpg" alt="Still can't find my name">
+				</section>
+				<section>					
+					<h2>‘Players’ in the search market</h2>
+					<ul>
+						<li><strong>Web Search engines:</strong>
+							<ul>
+								<small>
+									<li>Google</li>
+									<li>Bing</li>
+									<li>Yahoo!</li>
+									<li>Ask.com</li>
+									<li>Baidu</li>
+								</small>
+							</ul>
+						</li>
+						<br/>
+						<li><strong>Open-Source:</strong>
+							<ul>
+								<small>
+									<li>Sphinx</li>
+									<li>Apache Lucene/Solr</li>
+									<li>Elasticsearch</li>									
+									<li>Sensei</li>
+								</small>
+							</ul>
+						</li>
+						<br/>
+						<li><strong>Enterprise Search:</strong>
+							<ul>
+								<small>
+									<li>Oracle Endeca</li>
+									<li>MDEX</li>
+									<li>HP Autonomy</li>
+									<li>Exalead</li>
+									<li>IBM Enterprise Search</li>
+								</small>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Search categories</h2>
+					<br/>
+					<p>
+						Basic/Metadata retrieval<br/><h3><strong>→ data stores</strong></h3>
+					</p>
+					<br/>
+					<p>
+						<ul>							
+							<li>Full-text search</li>
+							<li>Geolocation</li>
+							<li>Fuzzy search (“did-you-mean”)</li>
+							<li>Natural Language</li>							
+						</ul>
+						<br/>
+						<h3><strong>→ search engines</strong></h3>
+						<br/>
+					</p>
+				</section>
+				<section>
+					<h2>A search engine...</h2>					
 						<ul>
 							<li><strong>Indexes data</strong> (fields or combination of fields)</li>
 							<br/>
@@ -97,9 +134,21 @@
 								<li>Text search
 									<p>
 										<ol>
-											<li><strong>Tokenizing</strong> (finding word boundaries, recognizing patterns like e-mail addresses, urls...)</li>
-											<li><strong>Stemming</strong> from word to concept (ex. Fishing/Fisher/Fished → Fish; Better → Good)</li>
-											<li><strong>Filtering</strong> (when HTML is indexed, not all chars are meaningful)</li>
+											<li>
+												<strong>Tokenizing</strong>
+												<br/>
+												<small>(finding word boundaries, recognizing patterns like e-mail addresses, urls...)</small>
+											</li>
+											<li>
+												<strong>Stemming</strong> from word to concept
+												<br/>
+												<small>(ex. Fishing/Fisher/Fished → Fish; Better → Good)</small>
+											</li>
+											<li>
+												<strong>Filtering</strong>
+												<br/>
+												<small>(when HTML is indexed, not all chars are meaningful)</small>
+											</li>
 										</ol>
 									</p>
 								</li>
@@ -168,34 +217,46 @@
 					</small>
 				</section>
 				<section>
-					<h2>Scalability - Availability</h2>					
+					<h2>Scalability - Availability</h2>
+					<br/>
 						<ul>							
 							<li>Multiple nodes running in a cluster
 							<ul>
-								<li>Acting as single service</li>
-								<li>Nodes that store data vs nodes that help in speeding up search</li>
+								<small>
+									<li>Acting as single service</li>
+									<li>Nodes that store data vs nodes that help in speeding up search</li>
+								</small>
 							</ul>
-							<li>Sharding of indexing (# shards is configurable)</li>
-							<li>Replicas of shards (also on different servers for failover)</li>
+							<br/>
+							<li>Sharding of indexing <br/><small>(# shards is configurable)</small></li>
+							<br/>
+							<li>Replicas of shards <br/><small>(also on different servers for failover)</small></li>
+							<br/>
 							<li>Master node: in charge of distributing/balancing shards
 							<ul>
-								<li>More data > More shards</li>
-								<li>More availability > More replicas per shard</li>
-							</ul>							
+								<small>
+									<li>More data > More shards</li>
+									<li>More availability > More replicas per shard</li>
+								</small>
+							</ul>
 						</ul>				
 				</section>
 				<section>
-					<h2>Advanced features</h2>					
+					<h2>Advanced features</h2>
+					<br/>					
 						<ul>							
 							<li>Nested documents (Child-Parent)<br/><small>Like MySQL joins?</small></li>
 							<br/>
 							<li>Percolation Index
-							<ul>							
-								<li>Store queries</li>
-								<li>Send documents -> Get returned which queries match</li>
+							<ul>				
+								<small>							
+									<li>Store queries</li>
+									<li>Send documents -> Get returned which queries match</li>
+								</small>
 							</ul>
 							<br/>
 							<li>Index Warming<br/><small>Register search queries that cause heavy load (so they can precached)</small></li>
+							<br/>
 							<li>Aggregations (facets)<br/><small>for statistical analysis (distribution of values, average, count, max, min...)</small></li>
 						</ul>				
 				</section>
