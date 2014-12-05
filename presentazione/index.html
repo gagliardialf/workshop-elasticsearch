@@ -261,39 +261,42 @@
 						</ul>				
 				</section>
 				<section>
-					<h2>Templates</h2>					
-						<p>Index template: http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/indices-templates.html
-Definisce template che vengono creati a tutti gli indici creati
-Search template:
-Template scritti in mustache per query
-Si possono preregistrare scrivendoli su file esterni
-						</p>						
-				</section>
-				<section>
 					<h2>API</h2>
-					<p>curl -XGET localhost:9200/?pretty</p>
+					<p><em>curl -XGET localhost:9200/?pretty</em></p>
 					<br/>
 					<h2>+ JSON DATA</h2>
 					<p>
-					{"tweet": "I think #elasticsearch is AWESOME","nick": "@clintongormley","name": "Clinton Gormley","date": "2013-06-03","rt" : 5,"loc": {! "lat": 13.4,! "lon": 52.5}
+						<em>{"tweet": "I think #elasticsearch is AWESOME","nick": "@clintongormley","name": "Clinton Gormley","date": "2013-06-03","rt" : 5,"loc": {! "lat": 13.4,! "lon": 52.5}</em>
 					</p>
 				</section>
+				<section>
+					<h2>Index templates</h2>					
+						<p>Index templates allow to define templates that will automatically be applied to new indices created. The templates include both settings and mappings, and a simple pattern template that controls if the template will be applied to the index created
+						</p>http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/indices-templates.html
+				</section>
+				<section>
+					<h2>Search templates</h2>					
+						<p>allows to use the mustache language to pre render search requests, before they are executed and fill existing templates with template parameters.
+						You can register search templates by storing it in the config/scripts directory, in a file using the .mustache extension. In order to execute the stored template, reference it by it’s name under the template key.
+						You can also register search templates by storing it in the elasticsearch cluster in a special index named .scripts. There are REST APIs to manage these indexed templates.
+						</p>http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/search-template.html
+				</section>				
 				<section>
 					<ul>
 						<li>
 							<p><strong>Insert data with an id: PUT</strong></p>
-							<p>PUT /index/type/id -d data</p>
+							<p><em>PUT /index/type/id -d data</em></p>
 							<small>index => where? type => what? id => which?</small>
 						</li><br/><li>
 							<p><strong>Insert data without an id: POST</strong></p>
-							<p>POST /index/type -d data</p>					
+							<p><em>POST /index/type -d data</em></p>					
 						</li><br/><li>
 							<p><strong>Verify if data exists: HEAD</strong></p>
-							<p>HEAD /index/type/id</p>
+							<p><em>HEAD /index/type/id</em></p>
 						</li><br/><li>
 							<p><strong>Retrieve data: GET</strong></p>
-							<p>GET /index/type/id</p>
-							<p>{"_index": "myapp","_type": "tweet","_id": "1","_version": 1,"exists": true,"_source": { ...DATA... }}# 200 OK</p>
+							<p><em>GET /index/type/id<strong> -></strong> 200 OK</p>
+							<p>{"_index": "myapp","_type": "tweet","_id": "1","_version": 1,"exists": true,"_source": { ...DATA... }}</em></p>
 						</li>
 					</ul>
 				</section>
@@ -345,50 +348,6 @@ CONTROLLO CONCORRENZA OTTIMISTICA senza lock
 						</a>
 					</section>
 				</section>
-
-				<section>
-					<h2>Slides</h2>
-					<p>
-						Not a coder? No problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slid.es" target="_blank">http://slid.es</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
-				</section>
-
-				<section>
-					<h2>Works in Mobile Safari</h2>
-					<p>
-						Try it out! You can swipe through the slides and pinch your way to the overview.
-					</p>
-				</section>
-
-				<section>
-					<h2>Marvelous Unordered List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
-
 				<section data-markdown>
 					<script type="text/template">
 						## Markdown support
@@ -568,13 +527,6 @@ function linkify( selector ) {
 				</section>
 
 				<section>
-					<h2>Spectacular image!</h2>
-					<a class="image" href="http://lab.hakim.se/meny/" target="_blank">
-						<img width="320" height="299" src="http://s3.amazonaws.com/hakim-static/portfolio/images/meny.png" alt="Meny">
-					</a>
-				</section>
-
-				<section>
 					<h2>Export to PDF</h2>
 					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, below is an example that's been uploaded to SlideShare.</p>
 					<iframe id="slideshare" src="http://www.slideshare.net/slideshow/embed_code/13872948" width="455" height="356" style="margin:0;overflow:hidden;border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen> </iframe>
@@ -599,14 +551,7 @@ function linkify( selector ) {
 						<li><a href="http://twitter.com/hakimel">Follow me on Twitter</a></li>
 					</ul>
 				</section>
-
-				<section>
-					<h1>THE END</h1>
-					<h3>BY Hakim El Hattab / hakim.se</h3>
-				</section>
-
 			</div>
-
 		</div>
 
 		<script src="lib/js/head.min.js"></script>
