@@ -1,0 +1,6 @@
+- Inserimento dati
+POST/_bulk + file dati (data.txt)
+- Ricerca/retrieving tutti dati inseriti
+GET provabulk2/type1/_search (index/type/_search)
+- Ricerca/retrieving dato da id
+GET provabulk2/type1/1 (index/type/id)

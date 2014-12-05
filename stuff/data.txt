@@ -1,0 +1,6 @@
+//copia la parte sottostante nella finestra di Marvel
+POST _bulk
+{ "index" : { "_index" : "provabulk2", "_type" : "type1", "_id" : "1" } }
+{ "field1" : "value2", "@timestamp" : "2014-12-05T09:27:00.931Z" }
+{ "index" : { "_index" : "provabulk2", "_type" : "type1", "_id" : "2" } }
+{ "field1" : "value3", "@timestamp" : "2014-12-05T09:27:00.931Z" }
